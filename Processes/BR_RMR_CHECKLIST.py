@@ -1,4 +1,20 @@
 
+
+    #not yet implemented
+BR_RMR_CHECKLIST:list = ["Check Jurisdiction",
+                    "Check for duplicate permits",
+                    "Check for Violations",
+                    "Check Licensed Professionals Attached",
+                    "Check if Private Provider",
+                    "Check for open permits",
+                    "Check submitted documents",
+                    "Check NOC requirement",
+                    'Enter or verify "Standard Description" and use established naming convention',
+                    "Deem Complete"
+                    ]
+
+
+
 #customer actions
 def request_customer(*args) -> None:
     ...
@@ -12,7 +28,14 @@ def PCPAO(a):
     ...
 
 def Check_Jurisdiction(address):
-    municipal_subprocess = ["Safety Harbor","Bellair Bluffs",""]
+    municipal_subprocess = [
+        "BELLAIR BEACH",
+        "BELLAIR BLUFFS",
+        "BELLAIR SHORE",
+        "INDIAN ROCKS BEACH",
+        "SAFETY HARBOR",
+        "OLSMAR"
+        ]
     if PCPAO(address) == "Unincorporated" or PCPAO(address) in municipal_subprocess:
         return True
     else:
@@ -55,6 +78,9 @@ def check_submitted_documents():
     ...
 
 def check_NOC_requirement():
+    #IF NO NOC THEN YOU CAN PROCEED JUST EMAIL APPLICANT THAT THEY WILL NEED TO FILE IT
+        #EMAIL TO APPLICANT THE NOTICE OF NO NOC
+        #PUT IN COMMENT OF APPLICATION INTAKE: Email to applicant... 
     ...
 
 def verify_Standard_Description_and_use_established_naming_convention():
@@ -65,6 +91,7 @@ def deem_complete():
     ...
 
 def move_to_distribution():
+    #zoning review, NO EXTERIOR WORK NOTED - CM
     ...
 
 def BR_RMR():

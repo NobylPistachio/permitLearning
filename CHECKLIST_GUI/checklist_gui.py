@@ -6,7 +6,8 @@ import logging
 #--------------------
 #TODO:
 #   Fix checkboxes so they can save, look into tk.BooleanVar() and the set function for it
-#
+#   Fix reset button, currently do not reset checkboxes or notes
+#   make it so you can have multiple instances
 #-----------------------
 logging.basicConfig(filename='checklist_gui.log',encoding='utf-8', level=logging.DEBUG)
 
@@ -19,7 +20,7 @@ class ChecklistGUI:
         self.master = master
         self.sections = sections
         self.checklist_states = [False] * len(self.sections)
-        self.notes_entries = []
+        self.notes_entries = [""] * len(self.sections)
         
         self.create_fields()
         self.create_checklist()
@@ -27,7 +28,7 @@ class ChecklistGUI:
 
         self.load_state()  # Load the state from a previous session
 
-        print(self.checklist_states)
+        # print(self.checklist_states)
 
     def create_fields(self):
         permit_label = tk.Label(self.master, text="Permit #:")
@@ -61,7 +62,7 @@ class ChecklistGUI:
 
 
     def toggle_checklist_item(self, index):
-        self.checklist_states[index].set(not self.checklist_states[index])
+        self.checklist_states[index] = not self.checklist_states[index]
         self.update_checklist()
         # self.save_state() # Save the checklist state
 

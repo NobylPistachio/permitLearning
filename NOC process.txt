@@ -1,0 +1,1 @@
+If there is No NOC, you can still accept it, the minimum is that there are plans for before and after. After, write in standard comment in workflow, send email

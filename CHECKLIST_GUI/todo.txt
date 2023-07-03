@@ -1,0 +1,5 @@
+CHECKLIST GUI:
+
+Open Basics:
+	from GUI, open PAO, ArcGIS, and Accela with Address, Permit#, and Parcel#
+	
