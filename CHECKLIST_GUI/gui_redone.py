@@ -33,26 +33,27 @@ class ChecklistGUI():
         #get number of checkboxes
             #if I have a load state I want to override this vvv
         self.checklist_states = [False] * len(self.sections)
+        self.checkboxes = []
         self.notes_section = []
 
         #setting up each checkbox, section_label, and note section
         for i, section in enumerate(self.sections):
                 #checkbox
             checkbox_var = tk.BooleanVar()
-            checkbox_var.set(self.checklist_states[i])
             checkbox = tk.Checkbutton(self.master, variable=checkbox_var, command=lambda idx=i: self.toggle_checklist_item(idx))
+            self.checkboxes.append(checkbox)
             checkbox.grid(row=i+3, column=0, sticky="e")
+            checkbox_var.set(self.checklist_states[i])
+            checkbox.checkbox_var = checkbox_var
                 #section_label
             section_label = tk.Label(self.master, text=section, wraplength=250)
             section_label.grid(row=i+3, column=1, sticky="w")
                 #note_section
             note_section = tk.Entry(self.master, width=30)
-            print(type(note_section))
                 #to be able to interact with the notes section I need to keep it somewhere, that will be the self.notes_section
             self.notes_section.append(note_section)
             note_section.grid(row=i+3, column=2, padx=5, sticky="w")
             
-
 
 
     def toggle_checklist_item(self, index):
@@ -63,6 +64,8 @@ class ChecklistGUI():
         #
 
     def reset_fields(self):
+
+            #checkboxes reset works only once
         confirmation = messagebox.askyesno("Reset Confirmation", "Are you sure you want to reset all fields and checklist?")
         if confirmation:
             self.permit_entry.delete(0, tk.END)
@@ -71,6 +74,8 @@ class ChecklistGUI():
             for entry in self.notes_section:
                 entry.delete(0, tk.END)
             self.checklist_states = [False] * len(self.sections)
+            for num,each in enumerate(self.checkboxes):
+                each.checkbox_var.set(self.checklist_states[num])
             # self.update_checklist()
             # self.save_state()  # Save the checklist state
 
