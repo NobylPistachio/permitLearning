@@ -1,4 +1,4 @@
 checklist type: BR-RMR Checklist
-fields: ['BR-RMR-24-05396', '1569 S Prescott Ave', '222915785340010350\n']
-checklist_states: [True, True, True, True, True, True, False, False, False, False]
-notes: ['CLEARWATER, FL 33756', '', '', 'Chris A Marte', "IT'S A PRIVATE PROVIDER!!! DON'T TOUCH", '', '', '', '', '']
+fields: ['asfcqaf', '', '']
+checklist_states: [True, True, True, False, False, False, False, False, False, False]
+notes: ['', '', 'qwfqwf', '', '', 'fqw', '', '', '', '']
