@@ -33,6 +33,8 @@ class ChecklistGUI():
         self.address_entry = self.create_field("Address:",grid_row=1)
         self.parcel_entry = self.create_field("Parcel #:",grid_row=2)
 
+        self.fields_entry = [self.permit_entry,self.address_entry,self.parcel_entry]
+
 
     def create_checklist(self):
         #get number of checkboxes
@@ -72,14 +74,13 @@ class ChecklistGUI():
         #
 
 
-    def reset_fields(self):
+    def reset_fields(self,message:bool=True):
             #checkboxes reset works only once
-        confirmation = messagebox.askyesno("Reset Confirmation", "Are you sure you want to reset all fields and checklist?")
+        confirmation = True
+        if message:
+            confirmation = messagebox.askyesno("Reset Confirmation", "Are you sure you want to reset all fields and checklist?")
         if confirmation:
-            self.permit_entry.delete(0, tk.END)
-            self.address_entry.delete(0, tk.END)
-            self.parcel_entry.delete(0, tk.END)
-            for entry in self.notes_section:
+            for entry in self.notes_section + self.fields_entry:
                 entry.delete(0, tk.END)
             self.checklist_states = [False] * len(self.sections)
             for num,each in enumerate(self.checkboxes):
@@ -98,10 +99,10 @@ class ChecklistGUI():
         self.load_button = self.create_button("Load",self.load_state,2)
     
     def save_state(self):
-        self.fields_entry = [self.permit_entry.get(),self.address_entry.get(),self.parcel_entry.get()]
+
         state = {
             'checklist type': self.checklist_title,
-            'fields': [field for field in self.fields_entry],
+            'fields': [field.get() for field in self.fields_entry],
             'checklist_states': self.checklist_states,
             'notes': [entry.get() for entry in self.notes_section]
         }
@@ -116,15 +117,34 @@ class ChecklistGUI():
                 for line in f:
                     key, value = line.strip().split(': ')
                     if key == 'checklist type':
-                        self.checklist_title = value
-                    elif key == 'fields':
-                        self.fields_entry = value.split(',')
+                        state[key] = value
+                    elif key in ['fields','notes']:
+                        state[key] = [elem.strip("[]'") for elem in value.split(", ")]
                     elif key == 'checklist_states':
-                        print([v for v in value.split(',')])
-                        # state[key] = [bool(int(v)) for v in value.split(',')]
-                    elif key == 'notes':
-                        state[key] = value.split(',')
-                self.checklist_states = state.get('checklist_states', [False] * len(self.sections))
+                        str_to_bool = lambda x: True if x == "True" else False
+                        save_states = [str_to_bool(v.strip("[]")) for v in value.split(', ')]
+                        state[key] = save_states
+
+
+            # 'checklist type': self.checklist_title,
+            # 'fields': [field for field in self.fields_entry],
+            # 'checklist_states': self.checklist_states,
+            # 'notes': [entry.get() for entry in self.notes_section]
+                self.reset_fields(False)
+
+                self.checklist_title = state["checklist type"]
+
+                self.permit_entry.insert(0, state["fields"][0])
+                self.address_entry.insert(0, state["fields"][1])
+                self.parcel_entry.insert(0, state["fields"][2])
+
+                self.checklist_states = [box for box in state["checklist_states"]]
+                for num,each in enumerate(self.checkboxes):
+                    each.checkbox_var.set(self.checklist_states[num])
+
+                for num,entry in enumerate(self.notes_section):
+                    entry.insert(0, state["notes"][num])
+
         except FileNotFoundError:
             self.checklist_states = [False] * len(self.sections)
 

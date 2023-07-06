@@ -1,4 +1,0 @@
-checklist type: BR-RMR Checklist
-fields: ['', '', '']
-checklist_states: [False, False, False, False, False, False, False, False, False, False]
-notes: ['', '', '', '', '', '', '', '', '', '']
