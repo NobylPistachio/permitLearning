@@ -1,0 +1,26 @@
+Written 07/06/2023 05:35PM EST
+
+Hey there,
+    I'm just here saying if you are reading this, Thank you for taking the time to look at this it means alot. 
+    Now to get down to business...
+    The GUI I made for permiting is the first time I have mess with Tkinter, so don't hate me if I dont follow some basic steps, I am going to do my best to make this as functional as possible.
+    The Root is the main window that the GUI is going to use, I am going to only use 1 and hopefully I don't go back on this.
+    The Tabs are going to be objects of Tabs Object (I have yet to write these but I don't mind planning), that way I can Initialize multiple of them. The tabs shouldn't need to communicate with each other so It makes sense to me.
+    In each tab, we have the Identifying_Fields, the Checklist_Components, and the Persistence_Buttons.
+    The Identifying_Fields will have a field for the Permit_Number, Address, Parcel_Number, Owner, and a bigger field for notes. 
+    The Identifying_Fields should also have an Autopopulate button to be able to query a PCPAO or some database to at least populate Address and Owner.
+    If I do get access to Accela_Database I want to query that database to Autopopulate some components in the Checklist
+    The Checklist_Components will have a set of rows depending on each permit. (I haven't yet decided how I want to store each permit but right now I am thinking .txt) 
+    In the creation of the Checklist_Components it will reference the permit file in order to create each row.
+    Each Component_Row will have the Checkbox, Label, Notes(entry field), and even an info hover to be able to give more context for that step. (will need to format the checklist data, could be json)
+    The Persistence_Buttons are Save, Load, Reset, and New_Tab. I might make more but that is what I have right now in my head. 
+    The save_button will save to a file named by the permitnumber, and date&time, still debating whether I want to use txt, json, pickle, or another format.
+    The load_button will load from a file, and bring it into the window. I will have to look into what format the file will be in and the process of taking the info out of said file.  (Side note, I just thought of making a GUI for selecting your file will think later)
+    The reset_button will reset the current tab to a blank form.
+    The New_Tab will create a new tab, but the current problem is what if I want to select a different kind of permit, do I use a GUI to select? Or do I just make an empty tab of the same permit type?
+
+    But other than that, I hope to continue building this GUI so that other permit techs can use this and make their job easier/help others learn what to do.
+    Kindest Regards,
+        Christopher Marte
+        aka NobylPistachio
+        KingChris396@gmail.com
