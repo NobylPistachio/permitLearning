@@ -155,6 +155,12 @@ BR_PLM_CHECKLIST:list = ["Check Jurisdiction",
                     "Deem Complete",
                     "Tell Krystal she did a good job"
                     ]
+BLAME_ROBERT:list = [
+    "Organize Desk",
+    "hello",
+    "hahaha",
+    "well I dont know what to put here"
+                     ]
 checklist = BR_RMR_CHECKLIST
 
 def add_tab(notebook,tab_text):
@@ -187,8 +193,8 @@ if __name__ == "__main__":
     # tab1 = tk.Frame(notebook)
     # notebook.add(tab1, text=title)
     
-    tab2 = add_tab(notebook,"Tab 2")
-    content_of_tab2 = ChecklistGUI(tab2,BR_PLM_CHECKLIST,"BR-PLB Checklist")
+    tab2 = add_tab(notebook,"Robert")
+    content_of_tab2 = ChecklistGUI(tab2,BLAME_ROBERT,"BR-PLB Checklist")
     # tab2 = tk.Frame(notebook)
     # notebook.add(tab2, text="Tab 2")
 
