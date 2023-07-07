@@ -131,9 +131,6 @@ class ChecklistGUI():
             self.checklist_states = [False] * len(self.sections)
 
 
-
-
-#Settings
 title = "BR-RMR Checklist"
 BR_RMR_CHECKLIST:list = ["Check Jurisdiction",
                     "Check for duplicate permits",
@@ -146,23 +143,64 @@ BR_RMR_CHECKLIST:list = ["Check Jurisdiction",
                     'Enter or verify "Standard Description" and use established naming convention',
                     "Deem Complete"
                     ]
+BR_PLM_CHECKLIST:list = ["Check Jurisdiction",
+                    "Check for duplicate permits",
+                    "Check for Violations",
+                    "Check Licensed Professionals Attached",
+                    "Check if Private Provider",
+                    "Check for open permits",
+                    "Check submitted documents",
+                    "Check NOC requirement",
+                    'Enter or verify "Standard Description" and use established naming convention',
+                    "Deem Complete",
+                    "Tell Krystal she did a good job"
+                    ]
 checklist = BR_RMR_CHECKLIST
+
+def add_tab(notebook,tab_text):
+    new_frame = ttk.Frame(notebook)
+    notebook.add(new_frame,text=tab_text)
+    return new_frame
+
+def tab_changed(event):
+    selected_tab = event.widget.tab(event.widget.select(), "text")
+    print(f"Selected tab: {selected_tab}")
+
+def click_add_new_tab(event):
+    selected_tab = event.widget.tab(event.widget.select(), "text")
+    if selected_tab == "+":
+        new_tab = add_tab(notebook,"New Tab")
+        notebook.insert("end",add_tab_function)
+        notebook.select(new_tab)
+
 
 if __name__ == "__main__":
     root = tk.Tk()
     root.title("Pinellas County Permit Utility")
+    
     notebook = ttk.Notebook(root)
     notebook.pack()
-    tab1 = tk.Frame(notebook)
+    # tab_list = notebook.winfo_children() #gets a list of child widgets
+
+    tab1 = add_tab(notebook,title)
+    content_of_tab1 = ChecklistGUI(tab1,checklist,title)
+    # tab1 = tk.Frame(notebook)
+    # notebook.add(tab1, text=title)
+    
+    tab2 = add_tab(notebook,"Tab 2")
+    content_of_tab2 = ChecklistGUI(tab2,BR_PLM_CHECKLIST,"BR-PLB Checklist")
     # tab2 = tk.Frame(notebook)
-    notebook.add(tab1, text=title)
     # notebook.add(tab2, text="Tab 2")
 
 
-    gui = ChecklistGUI(tab1,checklist,title)
+
+    #leave last
+    add_tab_function = add_tab(notebook,tab_text="+")
+    notebook.bind("<<NotebookTabChanged>>", click_add_new_tab)
+
 
     def on_closing():
-        gui.save_state()
+        content_of_tab1.save_state()
         root.destroy()
     #to close the window
     root.protocol("WM_DELETE_WINDOW", on_closing)
