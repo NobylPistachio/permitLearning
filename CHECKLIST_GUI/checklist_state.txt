@@ -1,4 +1,4 @@
 checklist type: BR-RMR Checklist
-fields: ['BR-ELE-23-00416\n', '3801 40TH AVE N', '033116608760040130']
-checklist_states: [True, False, False, False, False, False, False, False, False, False]
-notes: ['ST PETERSBURG, FL 33714 (Unincorporated)', 'Yes, BR-RMR-23-00713\n', '', '', '', '', '', '', '', '']
+fields: ['BR-RMR-23-00694', '\n226 HIGHLAND WOODS DR ', '272816393530000210']
+checklist_states: [True, True, True, True, True, True, False, True, True, True]
+notes: ['SAFETY HARBOR, FL 34695', '', '', 'NEED PROS', '', '', '[X] PLANS, [ ] PROS, [X] NOC, [X] PRE-APPROVAL', '', '', '']
