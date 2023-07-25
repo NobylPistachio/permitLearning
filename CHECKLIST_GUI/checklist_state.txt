@@ -1,4 +1,4 @@
 checklist type: BR-RMR Checklist
-fields: ['BR-RMR-23-00694', '\n226 HIGHLAND WOODS DR ', '272816393530000210']
-checklist_states: [True, True, True, True, True, True, False, True, True, True]
-notes: ['SAFETY HARBOR, FL 34695', '', '', 'NEED PROS', '', '', '[X] PLANS, [ ] PROS, [X] NOC, [X] PRE-APPROVAL', '', '', '']
+fields: ['', '', '']
+checklist_states: [False, False, False, False, False, False, False, False, False, False, False]
+notes: ['', '', '', '', '', '', '', '', '', '', '']

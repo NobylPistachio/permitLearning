@@ -1,0 +1,26 @@
+Permit #:
+Parcel #:
+Address:
+Jurisdiction:
+[ ] Duplicate Permits
+[ ] Violations
+[ ] Open Permits
+[-] Any Related?: 
+[ ] Licensed Professionals Attached (If not look at CPF and attach)
+Pro:
+[ ] Private Provider 
+----- Necessary Docs -----
+	[ ] Habitat (aka Land Development Form)
+	[ ] Park Approval (aka Letter of Authorization)
+	[ ] Building Plans
+	[ ] Plot Plans (aka Site Plans)
+	[ ] CPF		(Can apply without just Notify Applicant)
+	[ ] Sublist	(Can apply without just Notify Applicant)
+----- Routing -----
+	- Building Review
+	- Zoning Review
+	- Environmental Review
+	- Utilities Review
+	- Engineering Review
+	- Flood Review
+	- Right of Way Review

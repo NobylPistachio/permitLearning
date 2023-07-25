@@ -174,6 +174,22 @@ BLAME_ROBERT:list = [
     "hahaha",
     "well I dont know what to put here"
                      ]
+BR_MOH_CHECKLIST:list = [
+    "Check Jurisdiction",
+    "Check for duplicate permits",
+    "Check for Violations",
+    "Check Licensed Professionals Attached",
+    "Check if Private Provider",
+    "Check for open permits",
+    'Enter or verify "Standard Description" and use established naming convention aka RC - NEW MOBILE HOME - OWNER NAME',
+    "Check for Habitat",
+    "Check for Park Approval",
+    "Check for Building Plans",
+    "Check for Plot Plans",
+    "Check for CPF/Sublist",
+    "Deem Complete if All Necessary Documents are Present else Missing Information",
+    "Route to Building, Zoning, Enviromental, Utilities, Enineering, Flood, and Right of Way"
+]
 checklist = BR_RMR_CHECKLIST
 
 def add_tab(notebook,tab_text):
@@ -206,8 +222,8 @@ if __name__ == "__main__":
     # tab1 = tk.Frame(notebook)
     # notebook.add(tab1, text=title)
     
-    tab2 = add_tab(notebook,"Robert")
-    content_of_tab2 = ChecklistGUI(tab2,BLAME_ROBERT,"BR-PLB Checklist")
+    tab2 = add_tab(notebook,"BR-MOH")
+    content_of_tab2 = ChecklistGUI(tab2,BR_MOH_CHECKLIST,"BR-MOH Checklist")
     # tab2 = tk.Frame(notebook)
     # notebook.add(tab2, text="Tab 2")
 
