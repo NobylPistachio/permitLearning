@@ -1,0 +1,46 @@
+These are my notes for permit numbers
+
+The current format of permit numbers is:
+
+Division - Type - numbers
+
+
+-------------------------------
+The Permit Divisions are:
+
+BR-     Building Residential
+BC-     Building Commercial
+HTP-    Habitat and Sediment Control
+RUP-    Right-of-Way Utilization
+ZCL-    Zoning Clearances
+
+
+The Permit Types are
+
+-ADD-   Addition
+-ALM-   Aluminum Structure
+-BLD-   Building Other
+-DMO-   Demolition
+-ELE-   Electrical
+-FNW-   Fences and Walls
+-GAS-   Gas
+-MEC-   Mechanical
+-MOH-   Mobile Home
+-NEW-   New Construction
+-PLB-   Plumbing
+-POL-   Pools and Spas
+-RMR-   Remodel/Repair/Renovation
+-SFR-   NEW Single Family-Duplex-Townhome
+-SOL-   Solar
+-SUN-   Sun Room
+
+        Construction/Sale/Office Trailer
+-TAC-   Tower-Antenna-Cell
+-SIG-   Signs
+        Medical Gas/Vacuum
+-SPK-   Fire Sprinkler
+
+
+The Permit Numbers are assigned in order of when the permit is made.
+
+------------------------------------------------------

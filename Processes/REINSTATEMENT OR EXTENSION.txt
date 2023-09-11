@@ -1,0 +1,17 @@
+Permit Reinstatement
+
+Pull up Permit
+Match Address
+Check Expiration Date
+Check Balance
+Check Number of Extensions/Reinstatements
+If 2nd Reinstatement/3rd Extension get approval from supervisor
+If Permit is a Historical Permit (PER-H) then clone [Process with HISTORICAL PERMIT REINSTATEMENT]
+Add Fee		BLD_BUILDING_GENERAL > Permit Reinstatement/Permit Extension
+Update Contact
+Invoice Fee
+Send Email
+Update Description
+Push Workflow, Don't Issue!
+Assign to Self
+Wait for Payment

@@ -1,0 +1,17 @@
+Feeing - Roof-Mounted Solar Permit
+
+[Found Under MyTasks / 03 Res Plans Coordinate]
+
+~Regular
+>Work Description	(Watch Out for: Electric Panel C/O)
+	- Add "... B/E... NOC REQ ON SITE" at end of work description
+
+>PROS
+	- Set the Contractor as Primary 
+
+>Log Workflow
+	- Check for Approval for Zoning, flood, Building review
+
+>Fees
+	- Check for Building Fee
+		BLD_RES-BLD > 

@@ -1,0 +1,28 @@
+Historical Permit Reinstatement
+
+If Balance is not 0 then get supervisor
+Update Contact
+Clone the permit
+    Related > Clone Sgl
+    Building > Building Combo Permit
+    Create Record
+    Select:
+	Record Type - Specific Information:
+	    Inspections
+	General Record Information:
+	    Record Details
+	    Parcel
+	    Site Address
+	    Assets
+	    Documents
+	    Record Comments
+Update Description:
+	**{DATE}    REINSTATEMENT    {OLD_PERMIT_NUMBER}    {INITIALS}**
+Parcel > Get Address & Owner
+No Professional Necessary
+Add Contact as the Applicant
+Copy Custom1_Fields info to New Record (With Exception the Dates, and file referene number) [Definitely User Input]
+Press Submit
+Verify Cloned Permit is Related to Old Permit
+Delete FL Statute Fees off of New Permit
+Continue Reinstatement
